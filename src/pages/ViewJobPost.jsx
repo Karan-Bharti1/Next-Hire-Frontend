@@ -4,14 +4,14 @@ import useFetch from "../useFetch"
 import { getJobDataUrl } from "../urls"
 
 const ViewJobPost=()=>{
-    const{ id}=useParams()
+    const{id}=useParams()
 const {data,loading,error}=useFetch(`${getJobDataUrl}jobs/${id}`)
 const DisplayData=()=>(<>
 <h1 className="my-4">{data?.title}</h1>
 <div className="card p-3">
     <p><strong>Company Name: </strong>{data?.companyName}</p>
     <p><strong>Location: </strong>{data?.location}</p>
-    <p><strong>Salary: </strong> ₹{data?.salary}/- (per annum)</p>
+    <p><strong>Salary: </strong> ₹{data?.salary}/-(per annum)</p>
     <p><strong>Job Type: </strong>{data?.type}</p>
    <p><strong>Description: </strong>{data?.description.join(", ")}</p>
    <p><strong>Qualifications: </strong></p>

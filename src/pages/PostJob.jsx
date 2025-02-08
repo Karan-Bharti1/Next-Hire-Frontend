@@ -18,7 +18,7 @@ const handleChange = (event) => {
 
   setJobData((prev) => {
     if (name === "description" || name === "qualifications") {
-      return { ...prev, [name]: value ? value.split(",").map((item) => item.trim()) : [] };
+      return { ...prev, [name]: value ? value.split(",") : [] };
     } else {
       return {
         ...prev,
