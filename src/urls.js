@@ -1,1 +1,2 @@
 export const introImgUrl='https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg?auto=compress&cs=tinysrgb&w=860&h=550&dpr=2'
+export const getJobDataUrl="https://next-hire-backend-ochre.vercel.app/"
