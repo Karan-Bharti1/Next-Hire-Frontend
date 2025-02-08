@@ -17,6 +17,22 @@ const JobPosting=()=>{
 const matchesSearchTerm=searchTerm===""||job.title.toLowerCase().includes(searchTerm.toLowerCase())
 return matchesSearchTerm
     })
+    const handleDelete=async (jobId) => {
+        try {
+            const response=await fetch(`${getJobDataUrl}jobs/${jobId}`,{
+                method:'DELETE'
+            })
+            if (!response.ok) {
+                throw "Failed to delete item "
+            }
+            const data = await response.json()
+            if(data){
+                setJobData(prev=>prev.filter(job=>job._id!=jobId))
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
     const displayData = filteredData.map((job) => (
         <div className="col-md-4 my-2" key={job._id}>
           <div className="card p-3">
@@ -26,7 +42,7 @@ return matchesSearchTerm
             <p><strong>Job Type:</strong> {job.type}</p>
             <div>
             <Link className="btn btn-primary" to={`/viewjob/${job._id}`}>See Details</Link>
-            <button className="btn btn-danger mx-3">Delete</button>
+            <button className="btn btn-danger mx-3" onClick={()=>handleDelete(job._id)}>Delete</button>
             </div>
           </div>
         </div>
