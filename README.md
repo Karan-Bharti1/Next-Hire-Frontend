@@ -16,6 +16,8 @@ Next Hire is a simple Job Portal web app where users can **view, add, and delete
 - **Backend:** Node.js + Express  
 - **Database:** MongoDB (for storing jobs)  
 
+## Backend 
+(Backend Link)[https://github.com/Karan-Bharti1/Next-Hire-Backend]
 
 
 
